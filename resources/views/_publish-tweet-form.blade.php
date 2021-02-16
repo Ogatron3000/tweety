@@ -1,7 +1,8 @@
-<form action="" class="border-b rounded-xl p-4 bg-white w-full">
+<form action="/dashboard" method="POST" class="border-b rounded-xl p-4 bg-white w-full">
+    @csrf
     <textarea class="w-full p-0 focus:ring-0 border-0 border-b border-gray-200"
-              name=""
-              id=""
+              name="body"
+              id="body"
               placeholder="What's happening?"></textarea>
     <div class="flex justify-between items-center mt-2">
         <img class="rounded-full" src="https://i.pravatar.cc/40" alt="profile image">
