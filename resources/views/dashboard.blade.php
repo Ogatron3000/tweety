@@ -7,7 +7,7 @@
                     @include('_publish-tweet-form')
                     @include('_timeline')
                 </div>
-                @include('_firends')
+                @include('_friends')
             </div>
         </div>
     </div>

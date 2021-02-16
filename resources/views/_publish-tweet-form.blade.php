@@ -5,6 +5,6 @@
               placeholder="What's happening?"></textarea>
     <div class="flex justify-between items-center mt-2">
         <img class="rounded-full" src="https://i.pravatar.cc/40" alt="profile image">
-        <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white">submit</button>
+        <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">Submit</button>
     </div>
 </form>
