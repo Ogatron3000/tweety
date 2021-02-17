@@ -8,7 +8,7 @@
     <x-nav-link>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="focus:outline-none">
+            <button class="focus:outline-none">
                 {{ __('Logout') }}
             </button>
         </form>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,8 @@ Route::resource('home/tweets', TweetController::class)->except(['create'])->midd
 
 // Profile
 Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show');
+
+// Follows
+Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store');
 
 require __DIR__.'/auth.php';

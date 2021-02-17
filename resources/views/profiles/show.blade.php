@@ -15,9 +15,14 @@
                     </div>
                     <div>
                         @if(auth()->id() == $user->id)
-                        <button class="bg-blue-400 w-20 p-2 rounded-2xl">Edit</button>
+                            <button class="bg-blue-400 w-20 p-2 rounded-2xl">Edit</button>
                         @else
-                        <button class="bg-blue-400 w-20 p-2 rounded-2xl">Follow</button>
+                            <form method="POST" action="{{ route('follows.store', $user->username) }}">
+                                @csrf
+                                <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">
+                                    {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}
+                                </button>
+                            </form>
                         @endif
                     </div>
                 </div>
