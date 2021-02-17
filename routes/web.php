@@ -30,9 +30,9 @@ Route::resource('home/tweets', TweetController::class)->except(['create'])->midd
 //Route::post('/dashboard', [TweetController::class, 'store'])->middleware(['auth'])->name('tweets.store');
 
 // Profile
-Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show');
+Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show')->middleware(['auth']);
 
 // Follows
-Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store');
+Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store')->middleware(['auth']);
 
 require __DIR__.'/auth.php';
