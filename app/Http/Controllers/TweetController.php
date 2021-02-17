@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TweetController extends Controller
 {
     public function index() {
-        return view('dashboard', ['tweets' => auth()->user()->timeline()]);
+        return view('tweets.index', ['tweets' => auth()->user()->timeline()]);
     }
 
     public function store(Request $request)
@@ -17,11 +17,12 @@ class TweetController extends Controller
             'body' => 'required|string|max:255'
         ]);
 
+
         Tweet::create([
             'user_id' => auth()->id(),
             'body' => $attributes['body']
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('tweets.index');
     }
 }

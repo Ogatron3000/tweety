@@ -1,4 +1,4 @@
-<form action="/dashboard" method="POST" class="border-b rounded-xl p-4 bg-white w-full">
+<form action="{{ route('tweets.store') }}" method="POST" class="border-b rounded-xl p-4 bg-white w-full">
     @csrf
     <textarea class="w-full p-0 focus:ring-0 border-0 border-b border-gray-200"
               name="body"

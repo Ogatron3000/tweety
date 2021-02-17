@@ -25,14 +25,10 @@
     </head>
     <body class="antialiased">
         <div class="relative flex flex-col justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            <x-logo class="text-8xl" />
+            <x-logo class="text-8xl"/>
             <div>
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                @endauth
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
             </div>
         </div>
     </body>
