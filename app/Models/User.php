@@ -52,6 +52,13 @@ class User extends Authenticatable
             ->get();
     }
 
+    public function profile_timeline()
+    {
+        return Tweet::where('user_id', $this->id)
+            ->latest()
+            ->get();
+    }
+
     public function follows()
     {
         return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');

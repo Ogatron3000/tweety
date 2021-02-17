@@ -9,6 +9,6 @@ class ProfileController extends Controller
 {
     public function show(User $user)
     {
-        return view('profiles.show', ['user' => $user, 'tweets' => auth()->user()->timeline()]);
+        return view('profiles.show', compact('user'));
     }
 }
