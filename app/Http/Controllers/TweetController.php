@@ -17,7 +17,6 @@ class TweetController extends Controller
             'body' => 'required|string|max:255'
         ]);
 
-
         Tweet::create([
             'user_id' => auth()->id(),
             'body' => $attributes['body']
