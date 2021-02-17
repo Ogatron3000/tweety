@@ -48,4 +48,9 @@ class User extends Authenticatable
             ->latest()
             ->get();
     }
+
+    public function path()
+    {
+        return route('profiles.show', $this->username);
+    }
 }

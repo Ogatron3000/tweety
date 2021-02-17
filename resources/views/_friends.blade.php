@@ -7,18 +7,4 @@
             <span class="text-gray-400">@Wanjo0930</span>
         </div>
     </div>
-    <div class="flex items-start">
-        <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
-        <div class="text-sm">
-            <span class="font-bold mb-1">Wan Chiao</span>
-            <span class="text-gray-400">@Wanjo0930</span>
-        </div>
-    </div>
-    <div class="flex items-start mt-4">
-        <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
-        <div class="text-sm">
-            <span class="font-bold mb-1">Wan Chiao</span>
-            <span class="text-gray-400">@Wanjo0930</span>
-        </div>
-    </div>
 </div>

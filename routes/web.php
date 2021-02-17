@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,8 @@ Route::resource('home/tweets', TweetController::class)->except(['create'])->midd
 
 //Route::get('/dashboard', [TweetController::class, 'index'])->middleware(['auth'])->name('dashboard');
 //Route::post('/dashboard', [TweetController::class, 'store'])->middleware(['auth'])->name('tweets.store');
+
+// Profile
+Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show');
 
 require __DIR__.'/auth.php';
