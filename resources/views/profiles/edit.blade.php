@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="w-full sm:max-w-xl px-6 py-4 bg-white border-b overflow-clip sm:rounded-xl">
-        <form  method="POST" action="{{ route('profiles.update', $user->username) }}">
+        <form  method="POST" action="{{ route('profiles.update', $user) }}">
             @csrf
             @method('PUT')
 
