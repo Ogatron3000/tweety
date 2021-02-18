@@ -32,6 +32,8 @@ Route::resource('home/tweets', TweetController::class)->except(['create'])->midd
 
 // Profile
 Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show')->middleware(['auth']);
+Route::get('/profiles/{user:username}/edit', [ProfileController::class, 'edit'])->name('profiles.edit')->middleware(['auth', 'can:edit,user']);
+Route::put('/profiles/{user:username}', [ProfileController::class, 'update'])->name('profiles.update')->middleware(['auth']);
 
 // Follows
 Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store')->middleware(['auth']);

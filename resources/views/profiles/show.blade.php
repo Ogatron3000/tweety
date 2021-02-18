@@ -15,14 +15,16 @@
                     </div>
                     <div>
                         @if(auth()->id() == $user->id)
-                            <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">
-                                Edit
-                            </button>
+                            <a href="{{ route('profiles.edit', $user->username) }}">
+                                <button class="bg-blue-400 shadow rounded-full w-24 py-2 px-4 hover:bg-blue-300 text-white text-sm">
+                                    Edit
+                                </button>
+                            </a>
                         @else
                             <form method="POST" action="{{ route('follows.store', $user->username) }}">
                                 @csrf
-                                <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">
-                                    {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}
+                                <button class="bg-blue-400 shadow rounded-full w-24 py-2 px-4 hover:bg-blue-300 text-white text-sm">
+                                    {{ $user->following($user) ? 'Unfollow' : 'Follow' }}
                                 </button>
                             </form>
                         @endif
