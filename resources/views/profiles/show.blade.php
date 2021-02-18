@@ -24,7 +24,7 @@
                             <form method="POST" action="{{ route('follows.store', $user->username) }}">
                                 @csrf
                                 <button class="bg-blue-400 shadow rounded-full w-24 py-2 px-4 hover:bg-blue-300 text-white text-sm">
-                                    {{ $user->following($user) ? 'Unfollow' : 'Follow' }}
+                                    {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}
                                 </button>
                             </form>
                         @endif
