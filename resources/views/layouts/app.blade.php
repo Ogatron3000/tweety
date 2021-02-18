@@ -27,7 +27,7 @@
                 <div class="flex justify-between items-start overflow-hidden">
                     @include('_links')
                     {{ $slot }}
-                    @include('_friends')
+                    @include('_friends', ['friends' => auth()->user()->follows])
                 </div>
             </div>
         </div>
