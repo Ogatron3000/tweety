@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="flex-1 mx-10">
         <div class="bg-white rounded-xl border-b">
-            @foreach($users as $user)
+            @forelse($users as $user)
                 <div class="flex items-center justify-between p-4 {{ $loop->last ? '' : 'border-b' }}">
                     <div class="flex items-center">
                         <a href="{{ $user->path() }}" class="focus:outline-none">
@@ -17,7 +17,11 @@
                         {{ $user->created_at->diffForHumans() }}
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="p-6 text-center text-gray-400">
+                    <p>Nobody to follow. Ask your friends to join!</p>
+                </div>
+            @endforelse
         </div>
     </div>
 </x-app-layout>
