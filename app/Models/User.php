@@ -66,13 +66,17 @@ class User extends Authenticatable
 
     public function following(User $user)
     {
-
         return $this->follows()->where('following_user_id', $user->id)->exists();
     }
 
     public function toggleFollow(User $user)
     {
         return $this->follows()->toggle($user);
+    }
+
+    public function notFollowing()
+    {
+        return User::where('id', '!=', $this->id)->whereNotIn('id', $this->follows()->pluck('id'))->get();
     }
 
     public function path()

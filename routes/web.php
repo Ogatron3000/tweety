@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
@@ -34,5 +35,7 @@ Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->nam
 
 // Follows
 Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store')->middleware(['auth']);
+
+Route::get('/explore', [ExploreController::class, 'index'])->name('explore')->middleware(['auth']);
 
 require __DIR__.'/auth.php';

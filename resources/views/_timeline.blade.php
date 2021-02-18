@@ -1,6 +1,6 @@
-<div class="bg-white mt-4 rounded-xl">
+<div class="bg-white mt-4 rounded-xl border-b">
     @foreach($tweets as $tweet)
-        <div class="flex items-start p-4 border-b">
+        <div class="flex items-start p-4 {{ $loop->last ? '' : 'border-b' }}">
             <a href="{{ $tweet->user->path() }}" class="focus:outline-none">
                 <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
             </a>

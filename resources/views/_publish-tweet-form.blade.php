@@ -6,7 +6,7 @@
               id="body"
               placeholder="What's happening?"></textarea>
     @error('body')
-    <div class="text-sm text-red-500 mt-2">{{ $message }}</div>
+        <div class="text-sm text-red-500 mt-2">{{ $message }}</div>
     @enderror
     <div class="flex justify-between items-center mt-2">
         <img class="rounded-full" src="https://i.pravatar.cc/40" alt="profile image">
