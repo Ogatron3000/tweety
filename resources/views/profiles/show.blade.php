@@ -8,14 +8,16 @@
                      alt="profile image">
             </div>
             <div class="p-4">
-                <div class="flex justify-between">
-                    <div>
-                        <h1 class="font-bold text-2xl">{{ $user->name }}</h1>
+                <div class="flex justify-between ">
+                    <div class="w-1/3 break-words">
+                        <h1 class="font-bold text-xl">{{ $user->name }}</h1>
                         <h2 class="text-gray-400">{{ '@'.$user->username }}</h2>
                     </div>
                     <div>
                         @if(auth()->id() == $user->id)
-                            <button class="bg-blue-400 w-20 p-2 rounded-2xl">Edit</button>
+                            <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">
+                                Edit
+                            </button>
                         @else
                             <form method="POST" action="{{ route('follows.store', $user->username) }}">
                                 @csrf
