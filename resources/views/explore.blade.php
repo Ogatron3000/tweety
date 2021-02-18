@@ -7,10 +7,12 @@
                         <a href="{{ $user->path() }}" class="focus:outline-none">
                             <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
                         </a>
-                        <div>
-                            <span class="font-bold mb-1">{{ $user->name }}</span>
-                            <span class="text-gray-400">{{ '@' . $user->username }}</span>
-                        </div>
+                        <a href="{{ $user->path() }}" class="focus:outline-none">
+                            <div>
+                                <span class="font-bold mb-1">{{ $user->name }}</span>
+                                <span class="text-gray-400">{{ '@' . $user->username }}</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="text-gray-700">
                         Joined
