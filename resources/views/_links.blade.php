@@ -6,7 +6,7 @@
     <x-nav-link :href="route('explore')" :active="request()->routeIs('explore')">
         {{ __('Explore') }}
     </x-nav-link>
-    <x-nav-link :href="route('profiles.show', auth()->user()->username)" :active="request()->is('profiles/'.auth()->user()->username)">
+    <x-nav-link :href="route('profiles.show', auth()->user()->username)" :active="request()->is('profiles/' . auth()->user()->username)">
         {{ __('Profile') }}
     </x-nav-link>
     <x-nav-link>

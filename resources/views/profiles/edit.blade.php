@@ -46,7 +46,7 @@
                 <div>
                     <x-label for="avatar" :value="__('Avatar')"></x-label>
                     <input id="avatar"
-                           class="block mt-2 rounded"
+                           class="block mt-2"
                            type="file"
                            name="avatar"/>
                 </div>
