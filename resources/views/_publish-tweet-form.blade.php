@@ -1,6 +1,6 @@
 <form action="{{ route('tweets.store') }}" method="POST" class="border-b rounded-xl p-4 bg-white w-full">
     @csrf
-    <textarea class="w-full p-0 focus:ring-0 border-0 border-b border-gray-200"
+    <textarea class="w-full p-0 focus:ring-0 focus:border-blue-400 border-0 border-b border-gray-200"
               style="min-height: 5rem; max-height: 15rem"
               name="body"
               id="body"
