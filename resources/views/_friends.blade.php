@@ -3,7 +3,7 @@
     @forelse($friends as $friend)
         <div class="flex items-center py-2">
             <a href="{{ $friend->path() }}" class="focus:outline-none">
-                <img class="rounded-full mr-2" style="min-width: 2.5rem" src="https://i.pravatar.cc/40" alt="profile image">
+                <img class="rounded-full mr-3" style="width: 40px; height: 40px; object-fit: cover" src="{{ $friend->avatar }}" alt="profile image">
             </a>
             <a href="{{ $friend->path() }}" class="focus:outline-none w-3/4 text-sm break-words">
                 <span class="font-bold mb-1">{{ $friend->name }}</span>

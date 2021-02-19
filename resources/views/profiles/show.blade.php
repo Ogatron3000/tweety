@@ -3,8 +3,9 @@
         <div class="bg-white rounded-xl border-b border-gray-200">
             <div class="relative">
                 <img class="rounded-t-xl" src="{{asset('images/default-banner.png')}}" alt="profile banner"/>
-                <img class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full"
-                     src="https://i.pravatar.cc/150"
+                <img class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-blue-400"
+                     src="{{ $user->avatar }}"
+                     style="width: 150px; height: 150px; object-fit: cover"
                      alt="profile image">
             </div>
             <div class="p-4">

@@ -26,12 +26,19 @@ class ProfileController extends Controller
 
     public function update(User $user)
     {
-        $user->update(request()->validate([
+        $attributes = request()->validate([
             'name' => 'required|string|max:255',
-            'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user)],
             'email' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user)],
+            'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user)],
+            'avatar' => 'file',
             'password' => 'required|string|confirmed|min:8',
-        ]));
+        ]);
+
+        if ($attributes['avatar']) {
+            $attributes['avatar'] = $attributes['avatar']->store('avatars');
+        }
+
+        $user->update($attributes);
 
         return redirect()->route('profiles.edit', $user)->with('status', 'Profile updated!');
     }

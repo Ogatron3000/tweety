@@ -5,7 +5,7 @@
                 <div class="flex items-center justify-between p-4 {{ $loop->last ? '' : 'border-b' }}">
                     <div class="flex items-center">
                         <a href="{{ $user->path() }}" class="focus:outline-none">
-                            <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
+                            <img class="rounded-full mr-3" src="{{ $user->avatar }}" style="width: 40px; height: 40px; object-fit: cover" alt="profile image">
                         </a>
                         <a href="{{ $user->path() }}" class="focus:outline-none">
                             <div>

@@ -2,7 +2,7 @@
     @forelse($tweets as $tweet)
         <div class="flex items-center p-4 {{ $loop->last ? '' : 'border-b' }}">
             <a href="{{ $tweet->user->path() }}" class="focus:outline-none">
-                <img class="rounded-full mr-4" src="https://i.pravatar.cc/40" alt="profile image">
+                <img class="rounded-full mr-3" src="{{ $tweet->user->avatar }}" style="width: 40px; height: 40px; object-fit: cover" alt="profile image">
             </a>
             <div>
                 <a href="{{ $tweet->user->path() }}" class="focus:outline-none">

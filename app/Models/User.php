@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'username',
         'email',
+        'avatar',
         'password',
     ];
 
@@ -83,6 +84,11 @@ class User extends Authenticatable
     public function notFollowing()
     {
         return User::where('id', '!=', $this->id)->whereNotIn('id', $this->follows()->pluck('id'))->get();
+    }
+
+    public function getAvatarAttribute($value)
+    {
+        return asset($value);
     }
 
     public function path()

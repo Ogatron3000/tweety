@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class="w-full sm:max-w-xl px-6 py-4 bg-white border-b overflow-clip sm:rounded-xl">
-        <form  method="POST" action="{{ route('profiles.update', $user) }}">
-            @csrf
-            @method('PUT')
+        <form method="POST" action="{{ route('profiles.update', $user) }}" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
-            <!-- Session Status -->
+        <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')"></x-auth-session-status>
 
             <!-- Validation Errors -->
@@ -39,6 +39,18 @@
                          type="text"
                          name="username"
                          :value="$user->username"></x-input>
+            </div>
+
+            {{-- Avatar --}}
+            <div class="mt-4 flex items-end justify-between">
+                <div>
+                    <x-label for="avatar" :value="__('Avatar')"></x-label>
+                    <input id="avatar"
+                           class="block mt-2 rounded"
+                           type="file"
+                           name="avatar"/>
+                </div>
+                <img src="{{ $user->avatar }}" class="rounded-full" style="width: 50px; height: 50px; object-fit: cover" alt="current avatar">
             </div>
 
             {{-- Password --}}

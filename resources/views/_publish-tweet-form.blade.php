@@ -9,7 +9,7 @@
         <div class="text-sm text-red-500 mt-2">{{ $message }}</div>
     @enderror
     <div class="flex justify-between items-center mt-2">
-        <img class="rounded-full" src="https://i.pravatar.cc/40" alt="profile image">
+        <img class="rounded-full" src="{{ auth()->user()->avatar }}" style="width: 40px; height: 40px; object-fit: cover" alt="profile image">
         <button class="bg-blue-400 shadow rounded-full py-2 px-4 hover:bg-blue-300 text-white text-sm">Submit</button>
     </div>
 </form>
