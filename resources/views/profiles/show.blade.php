@@ -40,3 +40,4 @@
         @include('_timeline', ['tweets' => $user->profile_timeline()])
     </div>
 </x-app-layout>
+

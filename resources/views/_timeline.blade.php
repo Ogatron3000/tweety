@@ -17,13 +17,17 @@
                 <p>{{ $tweet->body }}</p>
                 @if( ! $tweet->isLikedBy(auth()->user()))
                     <div class="flex items-start text-gray-300 mt-2">
-                        <span class="mr-1"> {{ $tweet->likeCount() }}</span>
+                        {{-- likeCount() adds additional query, so instead we add scope withLikes() to tweet query whoose result we provide here as $tweet --}}
+                        {{-- that way we have 1 query less, and $tweet->likes avaliable on $tweet --}}
+                        {{-- <span class="mr-1"> {{ $tweet->likeCount() }}</span> --}}
+                        <span class="mr-1">{{ $tweet->likes ?: 0 }}</span>
 
                         <form action="{{ route('likes.store', ['tweet_id' => $tweet->id]) }}" method="POST">
                             @csrf
                 @else
                     <div class="flex items-start text-gray-300 mt-2 text-blue-400">
-                        <span class="mr-1"> {{ $tweet->likeCount() }}</span>
+                        {{--<span class="mr-1"> {{ $tweet->likeCount() }}</span>--}}
+                        <span class="mr-1">{{ $tweet->likes ?: 0 }}</span>
                         <form action="{{ route('likes.destroy', $tweet->getLikeID()) }}" method="POST">
                             @csrf
                             @method('DELETE')

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,14 +22,25 @@ class Tweet extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function scopeWithLikes(Builder $query)
+    {
+        $query->leftJoinSub(
+            'select tweet_id, count(id) likes from likes group by tweet_id',
+            'likes',
+            'likes.tweet_id',
+            'tweets.id'
+        );
+    }
+
+    // we use scope (above) instead
+    //    public function likeCount()
+    //    {
+    //        return $this->likes()->count();
+    //    }
+
     public function likes()
     {
         return $this->hasMany(Like::class);
-    }
-
-    public function likeCount()
-    {
-        return $this->likes()->count();
     }
 
     public function getLikeID()
