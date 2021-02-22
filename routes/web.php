@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,12 @@ Route::put('/profiles/{user:username}', [ProfileController::class, 'update'])->n
 // Follows
 Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])->name('follows.store')->middleware(['auth']);
 
+// Explore
 Route::get('/explore', [ExploreController::class, 'index'])->name('explore')->middleware(['auth']);
+
+// Likes
+Route::post('/likes', [LikeController::class, 'store'])->name('likes.store')->middleware(['auth']);
+Route::delete('/likes/{id}', [LikeController::class, 'destroy'])->name('likes.destroy')->middleware(['auth']);
+
 
 require __DIR__.'/auth.php';
